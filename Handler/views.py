@@ -4,6 +4,21 @@ from rest_framework.views import APIView
 import uuid
 import requests
 
+class Transaction(APIView):
+    def post(self , request):
+        data = {
+    "RecipientName": "Name",
+    "RecipientMsisdn":"Number",
+    "CustomerEmail": "Email",
+    "Channel": "Type",
+    "Amount": "Amount",
+    "PrimaryCallbackUrl": "	https://webhook.site/d4549a7d-32d1-4f22-b99f-12c28377fec4",
+    "Description": "Withdrawal",
+
+      }
+        response = requests.post('https://webhook.site/6b3ae430-950e-414f-8533-29f2ece7dfec', json=data)
+        return Response(response.text)
+     
 
 class Pay_Transaction(APIView):
     def post(self , request):
