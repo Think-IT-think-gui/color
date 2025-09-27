@@ -423,3 +423,27 @@ class Dirrect_Transaction(APIView):
       }
         response = requests.post('https://rmp.hubtel.com/merchantaccount/merchants/2017154/receive/mobilemoney', headers=header, json=data)
         return Response(response.text)
+
+
+
+
+class Check_Pos(APIView):
+    def get(self , request):
+       Hubtel_Pos_ID = '2017154'
+       url = f'https://trnf.hubtel.com/api/inter-transfers/{Hubtel_Pos_ID}'
+       key = 'MFlwelFCRzoyZWU3OGU5YWE2ZTM0NDQ0OGFmMzRjNTI1ODcwNTlkYg=='
+
+       header = {
+    'Authorization': f'Basic {key}',
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Cache-Control': 'no-cache'
+       }
+
+       response = requests.get(url, headers=header)
+
+       if response.status_code == 401:
+            print("Authentication failed. Check your API key.")
+       else:
+           print(response.text)
+       return Response(response.json())
