@@ -20,6 +20,9 @@ urlpatterns = [
 
     path('transaction', Transaction.as_view(), name="transaction"),
     path('dirrect_transaction', Dirrect_Transaction.as_view(), name="dirrect_transaction"),
+    path('check_pos', Check_Pos.as_view(), name="check_pos"),
+    
+
     
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
