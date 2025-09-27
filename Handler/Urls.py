@@ -19,6 +19,7 @@ urlpatterns = [
     path('initialize_ecg', Initialize_Ecg.as_view(), name="initialize_ecg"),
 
     path('transaction', Transaction.as_view(), name="transaction"),
+    path('dirrect_transaction', Dirrect_Transaction.as_view(), name="dirrect_transaction"),
     
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
