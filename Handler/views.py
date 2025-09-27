@@ -400,8 +400,16 @@ class Initialize_Ecg(APIView):
       return Response(response.json())
 
 
+
+
 class Dirrect_Transaction(APIView):
     def post(self , request):
+        header = {
+       'Authorization': 'Basic Wm14elFCNTphMjgyMjEyYjVkNzY0NDkzYTY5NzZkNWQwMDk2ZTYzMw==',
+       'Content-Type': 'application/json',
+       'Accept':'*/*',
+       'Cache-Control': 'no-cache'
+      }
         data = {
      "CustomerName": "Aminu Joe Doe",
       "CustomerMsisdn": "233246992714",
@@ -413,5 +421,5 @@ class Dirrect_Transaction(APIView):
       "ClientReference": "5jL2KlUy3vt21"
 
       }
-        response = requests.post('https://rmp.hubtel.com/merchantaccount/merchants/2017154/receive/mobilemoney', json=data)
+        response = requests.post('https://rmp.hubtel.com/merchantaccount/merchants/2017154/receive/mobilemoney', headers=header, json=data)
         return Response(response.text)
