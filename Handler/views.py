@@ -400,18 +400,18 @@ class Initialize_Ecg(APIView):
       return Response(response.json())
 
 
-class Dirrec_Transaction(APIView):
+class Dirrect_Transaction(APIView):
     def post(self , request):
         data = {
-     "CustomerName": "Joe Doe",
-      "CustomerMsisdn": "233200010000",
-      "CustomerEmail": "username@example.com",
-      "Channel": "vodafone-gh",
+     "CustomerName": "Aminu Joe Doe",
+      "CustomerMsisdn": "233246992714",
+      "CustomerEmail": "aminutahiru2000@gmail.com.com",
+      "Channel": "mtn-gh",
       "Amount": 0.8,
       "PrimaryCallbackUrl": "https://webhook.site/f33e5032-3982-42e3-824f-0d35cd6ee6f8",
       "Description": "Union Dues",
-      "ClientReference": "3jL2KlUy3vt21"
+      "ClientReference": "5jL2KlUy3vt21"
 
       }
-        response = requests.post('https://webhook.site/6b3ae430-950e-414f-8533-29f2ece7dfec', json=data)
+        response = requests.post('https://rmp.hubtel.com/merchantaccount/merchants/2017154/receive/mobilemoney', json=data)
         return Response(response.text)
