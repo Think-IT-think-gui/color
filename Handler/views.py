@@ -410,15 +410,16 @@ class Dirrect_Transaction(APIView):
        'Accept':'*/*',
        'Cache-Control': 'no-cache'
       }
+        x = request.data
         data = {
-     "CustomerName": "Aminu Joe Doe",
-      "CustomerMsisdn": "233246992714",
-      "CustomerEmail": "aminutahiru2000@gmail.com.com",
-      "Channel": "mtn-gh",
-      "Amount": 0.8,
-      "PrimaryCallbackUrl": "https://webhook.site/f33e5032-3982-42e3-824f-0d35cd6ee6f8",
-      "Description": "Union Dues",
-      "ClientReference": "5jL2KlUy3vt21"
+     "CustomerName": x["Name"],
+      "CustomerMsisdn": x["Number"],
+      "CustomerEmail": x["Email"],
+      "Channel": x["Channel"],
+      "Amount": x["Amount"],
+      "PrimaryCallbackUrl": x["Callback"],
+      "Description": x["About"],
+      "ClientReference": x["Refrence"]
 
       }
         response = requests.post('https://rmp.hubtel.com/merchantaccount/merchants/2017154/receive/mobilemoney', headers=header, json=data)
