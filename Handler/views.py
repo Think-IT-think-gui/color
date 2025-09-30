@@ -419,7 +419,7 @@ class Dirrect_Transaction(APIView):
       "Amount": x["Amount"],
       "PrimaryCallbackUrl": x["Callback"],
       "Description": x["About"],
-      "ClientReference": x["Refrence"]
+      "ClientReference": x["Reference"]
 
       }
         response = requests.post('https://rmp.hubtel.com/merchantaccount/merchants/2017154/receive/mobilemoney', headers=header, json=data)
