@@ -182,7 +182,7 @@ class Transfere_Account(APIView):
     "ClientReference": uid,
       }
        response1 = requests.post(url, headers=header, json=data)
-       print(response1.json())
+       print(response1)
        return Response(response1.text)
 
 
